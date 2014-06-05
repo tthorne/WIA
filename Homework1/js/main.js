@@ -161,18 +161,16 @@ Do not overlap any other object.
 		var ctx = theCanvas.getContext("2d");
 	
 	if(ctx){
-		ctx.strokeStyle= "black";
-		ctx.lineWidth = 5;
-
-		
-		
-		//Full Circle
-		var degrees = 360;
-		var radians = (degrees/180)*Math.PI;
-		
-		ctx.beginPath();
-		ctx.bezierCurveTo(50,100, 200, 300, 200, 150);
-		ctx.stroke();
+	  // Umbrells Top
+	  ctx.strokeStyle = "black";
+	  ctx.lineWidth = 2;
+	  ctx.beginPath();
+	  ctx.arc(300,200,200,0*Math.PI,1*Math.PI,true);
+	  ctx.moveTo(100, 190);
+	  ctx.bezierCurveTo(110, 146, 163, 146, 174, 186);
+	  ctx.moveTo(173, 188);
+	  ctx.bezierCurveTo(228, 156, 263, 150, 264, 204);
+	  ctx.stroke();
 		
 		}		
 	
@@ -258,12 +256,81 @@ You must use at least 3 different methods.
 ********************************************/
 
 // Draw scene here
-var theCanvas = document.getElementById("Part7");
-if (theCanvas && theCanvas.getContext) {
+	var theCanvas = document.getElementById("Part7");
+	if (theCanvas && theCanvas.getContext) {
 	var ctx = theCanvas.getContext("2d");
 
-if(ctx){
-		
+	if(ctx){	
+		  
+		  //Sun
+		  ctx.strokeStyle = "black";
+		  ctx.fillStyle = "yellow";
+		  ctx.lineWidth = 4;
+		  ctx.beginPath();
+		  ctx.arc(170,90,80,0*Math.PI,2*Math.PI,true);
+		  ctx.closePath();
+		  ctx.stroke();
+		  ctx.fill();
+		  
+		  // begin custom shape
+	      ctx.beginPath();
+	      ctx.moveTo(170, 80);
+	      ctx.bezierCurveTo(130, 100, 130, 150, 230, 150);
+	      ctx.bezierCurveTo(250, 180, 320, 180, 340, 150);
+	      ctx.bezierCurveTo(420, 150, 420, 120, 390, 100);
+	      ctx.bezierCurveTo(430, 40, 370, 30, 340, 50);
+	      ctx.bezierCurveTo(320, 5, 250, 20, 250, 50);
+	      ctx.bezierCurveTo(200, 5, 150, 20, 170, 80);
+		  
+  		var theString = "Cupcake ipsum dolor sit amet danish candy tootsie roll wafer.";		
+	
+  		//Style the font
+  		ctx.font = "12pt Arial Black";
+  		ctx.fillStyle = "blue";
+  		ctx.fillText(theString, 100, 200);
+
+	      // complete custom shape
+	      ctx.closePath();
+	      ctx.lineWidth = 5;
+	      ctx.strokeStyle = "black";
+		  ctx.fillStyle = "white";
+	      ctx.stroke();
+		  ctx.fill();
+		  
+		  // The Face
+		  ctx.strokeStyle = "black";
+		  ctx.fillStyle = "yellow";
+		  ctx.lineWidth = 4;
+		  ctx.beginPath();
+		  ctx.arc(500,400,50,0*Math.PI,2*Math.PI,true);
+		  ctx.closePath();
+		  ctx.stroke();
+		  ctx.fill();
+ 
+		  // The Smile
+		  ctx.strokeStyle = "black";
+		  ctx.lineWidth = 2;
+		  ctx.beginPath();
+		  ctx.arc(500,400,40,0.2*Math.PI,0.8*Math.PI,false);
+		  ctx.stroke();
+ 
+		   // The Left eye
+		   ctx.strokeStyle = '#000000';
+		   ctx.fillStyle = '#000000';
+		   ctx.beginPath();
+	       ctx.arc(485,390,10,0*Math.PI,2*Math.PI,false);
+           ctx.closePath();
+	       ctx.stroke();
+	       ctx.fill();
+ 
+	       // The Right Eye
+	       ctx.strokeStyle = '#000000';
+	       ctx.fillStyle = '#000000';
+	       ctx.beginPath();
+	       ctx.arc(515,390,10,0*Math.PI,2*Math.PI,false);
+	       ctx.closePath();
+	       ctx.stroke();
+	       ctx.fill();
 	
 	}		
 
